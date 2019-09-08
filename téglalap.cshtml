@@ -1,0 +1,46 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.IO;
+using System.Text;
+
+namespace téglalap
+{
+	class Program
+	{
+		static void Main(string[] args)
+		
+{     
+			string teglalap = @"c:\C#\csharp.txt";
+			StreamWriter iras = new StreamWriter(teglalap,false,Encoding.UTF8);
+			Console.WriteLine("A kezdéshez nyomj egy gombot (Esc-el kilépsz)");
+			while (Console.ReadKey(true).Key != ConsoleKey.Escape) {
+				
+			
+			Console.WriteLine("Adja meg az a oldal hosszát");
+			var a = Convert.ToInt32(Console.ReadLine());
+			Console.WriteLine("Adja meg a b oldal hosszát");
+			var b = Convert.ToInt32(Console.ReadLine());
+			if (a==b) {
+				Console.WriteLine("A négyzet területe:{0}",a*a);
+				iras.WriteLine("A négyzet területe:{0}",a*a);
+				iras.Close();
+			}
+			else
+			{
+				Console.WriteLine("A téglalap területe:{0}",b*a);
+				iras.WriteLine("A téglalap területe:{0}",a*b);
+				iras.Close();
+			}
+			Console.WriteLine("Az újra kezdéshez nyomj egy gombot(Esc- el kilépsz)");
+			}
+			
+			Console.ReadKey();
+		
+			
+		
+		
+		}
+	}
+}
